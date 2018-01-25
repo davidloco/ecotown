@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/plantillaHome.xhtml">
+	<ui:define name="top">
+	</ui:define>
+	<ui:define name="left">
+	</ui:define>
+	<ui:define name="content">
+
+		<h:panelGrid styleClass="panelMedio3">
+			<h:panelGrid styleClass="panelMedio2" width="40%">
+				<p:dataGrid var="mem" value="#{membresiaSelect.listMembresias}"
+					columns="#{membresiaSelect.listMembresias.size()}">
+
+					<p:panel header="#{mem.strnombre}" styleClass="panelMembresia">
+						<p:graphicImage value="#{msg.rutaimg}#{mem.strimgn}"
+							height="230px" />
+						<p:commandButton value="#{msg.comprarahora}" icon="fa fa-recycle"
+							styleClass="outButtonTotal" />
+						<h:panelGrid styleClass="tableMembresia">
+							<h:panelGrid columns="3" styleClass="tableMembresia">
+								<p:outputLabel value="#{msg.co}" />
+								<h:outputText value="#{mem.numprco}">
+									<f:convertNumber type="currency" currencySymbol="$"
+										minFractionDigits="0" />
+								</h:outputText>
+								<p:outputLabel value="/#{msg.mes}" />
+							</h:panelGrid>
+							<p:outputLabel value="#{msg.maspopular}" styleClass="txtPopular"
+								rendered="#{mem.boolpplr}" />
+						</h:panelGrid>
+					</p:panel>
+
+				</p:dataGrid>
+			</h:panelGrid>
+		</h:panelGrid>
+
+	</ui:define>
+</ui:composition>

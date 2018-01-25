@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<f:loadBundle var="msg" basename="com.slack.ecotown.util.bundle" />
+	<title><h:outputText value="#{msg.nameApp}" /></title>
+	<h:outputStylesheet library="css" name="ecotown.css" />
+	<h:outputStylesheet library="css" name="export.css" />
+	<link href="/ecotown/resources/images/logo_ecotown.ico"
+		rel="shortcut icon" type="image/x-icon" />
+
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+</h:head>
+
+<h:body>
+
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="9%">
+			<ui:insert name="top" />
+		</p:layoutUnit>
+
+		<p:layoutUnit styleClass="panel_principal" position="center">
+			<ui:insert name="content" />
+		</p:layoutUnit>
+	</p:layout>
+
+	<ui:include src="/template/modalGeneral/modalGeneral.xhtml" />
+</h:body>
+</html>

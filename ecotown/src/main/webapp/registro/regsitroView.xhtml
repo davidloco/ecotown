@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="form" prependId="false">
+		<p:growl id="msgs" showDetail="true" />
+
+		<div class="ui-g ui-fluid">
+			<div class="ui-g-12 ui-md-4">
+				<div class="ui-inputgroup">
+					<span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+					<p:inputText id="idnameempresa" styleClass="inputTotal"
+						placeholder="#{msg.name} #{msg.empresa}"
+						title="Nombre de la empresa u organización que realiza el ingreso" />
+					<p:tooltip for="idnameempresa" showEvent="focus" hideEvent="blur" />
+				</div>
+			</div>
+		</div>
+		<div class="ui-g ui-fluid">
+			<div class="ui-g-12 ui-md-4">
+				<div class="ui-inputgroup">
+					<span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+					<p:selectOneMenu id="sectorproductivo" style="width:95%;"
+						placeholder="#{msg.sectorproductivo}">
+						<f:selectItems value="#{registro.listSector}" var="sec"
+							itemLabel="#{sec.secNmbre}" itemValue="#{sec.secId}" />
+					</p:selectOneMenu>
+					<p:tooltip for="sectorproductivo" trackMouse="true"
+						value="Seleccione el sector productivo al cual pertenece la empresa" />
+				</div>
+			</div>
+		</div>
+		<div class="ui-g ui-fluid">
+			<div class="ui-g-12 ui-md-4">
+				<div class="ui-inputgroup">
+					<span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+					<p:selectOneMenu id="tipoIdentificacion" style="width:95%;"
+						placeholder="Tipo Identificacion">
+						<f:selectItems value="#{registro.listTipoIdentificacion}" var="ti"
+							itemLabel="#{ti.tpoSgls} - #{ti.tpoIdntfccnNmbre}"
+							itemValue="#{ti.tpoIdntfccnId}" />
+					</p:selectOneMenu>
+					<p:tooltip for="tipoIdentificacion" trackMouse="true"
+						value="Tipo Identificacion" />
+				</div>
+			</div>
+		</div>
+		<div class="ui-g ui-fluid">
+			<div class="ui-g-12 ui-md-4">
+				<div class="ui-inputgroup">
+					<span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+					<p:inputMask id="direccionPrincipal" styleClass="inputTotal"
+						placeholder="#{msg.direccionPrincipal}"
+						title="Direccion Principal de Empresa u Organizacion"
+						mask="99#99-99" />
+					<p:tooltip for="direccionPrincipal" showEvent="focus"
+						hideEvent="blur" />
+				</div>
+			</div>
+		</div>
+		<div class="ui-g ui-fluid">
+			<div class="ui-g-12 ui-md-4">
+				<div class="ui-inputgroup">
+					<span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+					<p:inputText id="ciudad" title="Ciudad donde se encuentra ubicado"
+						placeholder="#{msg.ciudad}" styleClass="inputTotal" />
+					<p:tooltip for="ciudad" showEvent="focus" hideEvent="blur" />
+				</div>
+			</div>
+		</div>
+		<div class="ui-g ui-fluid">
+			<div class="ui-g-12 ui-md-4">
+				<div class="ui-inputgroup">
+					<span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+					<p:inputMask id="telefono" title="Telefono de Contacto"
+						styleClass="inputTotal" placeholder="#{msg.telefono}"
+						mask="(999) 999-9999" />
+					<p:tooltip for="telefono" showEvent="focus" hideEvent="blur" />
+				</div>
+			</div>
+		</div>
+		<div class="ui-g ui-fluid">
+			<div class="ui-g-12 ui-md-4">
+				<div class="ui-inputgroup">
+					<span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+					<p:inputText id="paginaWeb" placeholder="#{msg.paginaWeb}"
+						styleClass="inputTotal"
+						title="Pagina Web de la Empresa u Organizacion" />
+					<p:tooltip for="paginaWeb" showEvent="focus" hideEvent="blur" />
+				</div>
+			</div>
+		</div>
+		<div class="ui-g ui-fluid">
+			<div class="ui-g-12 ui-md-4">
+				<div class="ui-inputgroup">
+					<span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+					<p:inputText id="fax" title="Fax de la Empresa u Organizacion"
+						placeholder="#{msg.fax}" styleClass="inputTotal" />
+					<p:tooltip for="fax" showEvent="focus" hideEvent="blur" />
+				</div>
+			</div>
+		</div>
+
+		<p:selectBooleanButton onLabel="Si" offLabel="No"
+			onIcon="ui-icon-check" offIcon="ui-icon-close" />
+		<h:outputText value="Acepta Terminos y Condiciones" />
+
+	</h:form>
+
+</ui:composition>

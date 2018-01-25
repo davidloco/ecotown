@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form prependId="false">
+		<p:panel header="#{msg.tipoMaterial}">
+			<p:messages showDetail="true" showSummary="false" autoUpdate="true"
+				closable="true" />
+
+			<h:panelGrid id="tipoMaterial" columns="2"
+				columnClasses="columnizquierda">
+
+				<p:outputLabel value="#{msg.name}:" />
+				<p:inputText required="true"
+					value="#{tipoMaterial.tipoMaterial.strnmbre}" label="#{msg.name}">
+					<f:validateLength minimum="2" />
+				</p:inputText>
+
+				<p:outputLabel value="#{msg.descripcion}:" />
+				<p:inputTextarea required="true"
+					value="#{tipoMaterial.tipoMaterial.strdscrpcn}"
+					label="#{msg.descripcion}">
+					<f:validateLength minimum="2" />
+				</p:inputTextarea>
+
+				<f:facet name="footer">
+					<p:commandButton value="#{msg.guardar}"
+						icon="fa fas fa-plus fa-inverse fa-lg"
+						update="tipoMaterial, tableTipoMaterial"
+						styleClass="outButtonTotalFont" action="#{tipoMaterial.guardar()}" />
+				</f:facet>
+
+
+			</h:panelGrid>
+
+			<p:spacer height="10" />
+
+			<p:dataTable id="tableTipoMaterial" var="tm"
+				value="#{tipoMaterial.listTipoMaterials}"
+				emptyMessage="#{msg.label1}" resizableColumns="true" rows="5"
+				paginator="true" paginatorPosition="bottom" style="width:80%">
+
+				<p:column headerText="#{msg.name}" sortBy="#{tm.strnmbre}"
+					filterMatchMode="contains" filterBy="#{tm.strnmbre}">
+					<h:outputText value="#{tm.strnmbre}" />
+				</p:column>
+
+				<p:column headerText="#{msg.codigo} #{msg.ler}"
+					sortBy="#{tm.intcdgler}" filterMatchMode="contains"
+					filterBy="#{tm.intcdgler}">
+					<h:outputText value="#{tm.intcdgler}" />
+				</p:column>
+
+				<p:column headerText="#{msg.descripcion}" sortBy="#{tm.strdscrpcn}"
+					filterMatchMode="contains" filterBy="#{tm.strdscrpcn}">
+					<h:outputText value="#{tm.strdscrpcn}" />
+				</p:column>
+
+				<p:column headerText="#{msg.ver}" styleClass="columnButton">
+					<p:commandButton icon="fa fa-search fa-inverse fa-lg"
+						update="tableTipoMaterial" immediate="true" title="#{msg.ver}"
+						alt="#{msg.ver}" styleClass="btnVer" />
+				</p:column>
+
+				<p:column headerText="#{msg.editar}" styleClass="columnButton">
+					<p:commandButton icon="fa fa-pencil fa-inverse fa-lg"
+						update="tableTipoMaterial" styleClass="btnEditar" immediate="true"
+						title="#{msg.editar}" alt="#{msg.editar}" />
+				</p:column>
+
+				<p:column headerText="#{msg.eliminar}" styleClass="columnButton">
+					<p:commandButton icon="fa fa-trash fa-inverse fa-lg"
+						update="tableTipoMaterial" immediate="true"
+						title="#{msg.eliminar}" alt="#{msg.eliminar}"
+						action="#{tipoMaterial.eliminar(tm)}" styleClass="btnBorrar" />
+				</p:column>
+
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+
+</ui:composition>

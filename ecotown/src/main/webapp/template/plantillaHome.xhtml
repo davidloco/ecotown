@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<f:loadBundle var="msg" basename="com.slack.ecotown.util.bundle" />
+	<title><h:outputText value="#{msg.nameApp}" /></title>
+	<h:outputStylesheet library="css" name="ecotown.css" />
+	<h:outputStylesheet library="css" name="export.css" />
+	<link href="/ecotown/resources/images/logo_ecotown.ico"
+		rel="shortcut icon" type="image/x-icon" />
+	<script src="#{msg.gmail}"></script>
+	<script type="text/javascript" src="../resources/js/ecotown.js" />
+	<script type="text/javascript" src="../resources/js/amcharts.js" />
+	<script type="text/javascript" src="../resources/js/export.min.js" />
+	<script type="text/javascript" src="../resources/js/light.js" />
+	<script type="text/javascript" src="../resources/js/pie.js" />
+
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+
+</h:head>
+
+<h:body>
+
+	<pm:page>
+		<p:layout fullPage="true">
+			<p:layoutUnit position="north" size="10%">
+				<ui:include src="/template/headerHome.xhtml" />
+				<ui:insert name="top" />
+			</p:layoutUnit>
+
+			<p:layoutUnit position="west" size="20%" closable="false"
+				resizable="true" collapsible="true">
+				<ui:include src="/menu/menuModulo.xhtml" />
+				<ui:include src="/menu/menuRecusos.xhtml" />
+				<ui:insert name="left" />
+			</p:layoutUnit>
+
+			<p:layoutUnit position="east" size="20%" closable="false"
+				resizable="true" collapsible="true" styleClass="ui-background">
+				<ui:insert name="right" />
+			</p:layoutUnit>
+
+			<p:layoutUnit styleClass="panel_segundario" position="center">
+				<pm:content>
+					<ui:insert name="content" />
+				</pm:content>
+			</p:layoutUnit>
+		</p:layout>
+
+		<ui:include src="/template/modalGeneral/modalGeneral.xhtml" />
+
+	</pm:page>
+</h:body>
+</html>

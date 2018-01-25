@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form prependId="false">
+		<p:panel header="#{msg.parametrica}">
+			<p:messages showDetail="true" showSummary="false" autoUpdate="true"
+				closable="true" />
+
+			<h:panelGrid id="parametrica" columns="2"
+				columnClasses="columnizquierda">
+
+				<p:outputLabel value="#{msg.name}:" />
+				<p:inputText required="true" maxlength="100"
+					value="#{parametrica.parametrica.strnmbre}" label="#{msg.name}">
+					<f:validateLength minimum="2" />
+				</p:inputText>
+
+				<p:outputLabel value="#{msg.valor}:" />
+				<p:inputTextarea required="true" maxlength="3000"
+					value="#{parametrica.parametrica.strvlr}" label="#{msg.valor}">
+					<f:validateLength minimum="2" />
+				</p:inputTextarea>
+
+				<p:outputLabel value="#{msg.descripcion}:" />
+				<p:inputText required="true" maxlength="100"
+					value="#{parametrica.parametrica.strdscrpcn}"
+					label="#{msg.descripcion}">
+					<f:validateLength minimum="2" />
+				</p:inputText>
+
+				<p:commandButton value="#{msg.guardar}" icon="ui-icon-tag"
+					update="parametrica, tableParametrica"
+					styleClass="ui-priority-primary" action="#{parametrica.guardar()}" />
+
+			</h:panelGrid>
+
+			<p:spacer height="10" />
+
+			<p:dataTable id="tableParametrica" var="pa"
+				value="#{parametrica.listParametricas}" emptyMessage="#{msg.label1}"
+				resizableColumns="true" rows="5" paginator="true"
+				paginatorPosition="bottom" style="width:50%">
+
+				<p:column headerText="#{msg.name}" sortBy="#{pa.strnmbre}"
+					filterMatchMode="contains" filterBy="#{pa.strnmbre}">
+					<h:outputText value="#{pa.strnmbre}" />
+				</p:column>
+
+				<p:column headerText="#{msg.ver}" styleClass="columnButton">
+					<p:commandButton icon="fa fa-search fa-inverse fa-lg"
+						update="tableParametrica" immediate="true" title="#{msg.ver}"
+						alt="#{msg.ver}" styleClass="btnVer" />
+				</p:column>
+
+				<p:column headerText="#{msg.editar}" styleClass="columnButton">
+					<p:commandButton icon="fa fa-pencil fa-inverse fa-lg"
+						update="tableParametrica" styleClass="btnEditar" immediate="true"
+						title="#{msg.editar}" alt="#{msg.editar}" />
+				</p:column>
+
+				<p:column headerText="#{msg.eliminar}" styleClass="columnButton">
+					<p:commandButton icon="ui-icon-trash" update="tableParametrica"
+						immediate="true" styleClass="ui-priority-primary"
+						title="#{msg.eliminar}" alt="#{msg.eliminar}"
+						action="#{parametrica.eliminar(pa)}" />
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+
+</ui:composition>

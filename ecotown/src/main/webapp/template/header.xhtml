@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form>
+		<p:menubar>
+			<p:menuitem value="#{msg.iniciarSesion}" icon="fa fa-sign-in"
+				onclick="PF('iniciarSesion').show();" immediate="true" />
+			<p:menuitem value="#{msg.registrarse}" action="inregistroHome"
+				immediate="true" icon="fa fa-key" />
+			<f:facet name="options">
+				<h:graphicImage value="/resources/images/logo.png" width="40" />
+			</f:facet>
+		</p:menubar>
+	</h:form>
+
+</ui:composition>

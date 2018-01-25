@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:dialog header="#{msg.creacion} #{msg.tercero}" id="modalTercero"
+		widgetVar="modalTercero" draggable="true" showEffect="fade"
+		hideEffect="fade" resizable="false" modal="true" dynamic="true">
+		<h:form prependId="false">
+			<p:messages showDetail="true" showSummary="false" autoUpdate="true"
+				closable="true" />
+			<h:panelGrid id="tercero" columns="2" columnClasses="columnizquierda">
+				<ui:insert name="modalTercero" />
+
+				<p:commandButton value="#{msg.guardar}"
+					icon="fa fa-floppy-o fa-inverse fa-lg" styleClass="btnVer"
+					action="#{tercero.guardar()}"
+					oncomplete="if (!args.validationFailed) {PF('modalTercero').hide()}" />
+			</h:panelGrid>
+		</h:form>
+	</p:dialog>
+
+</ui:composition>

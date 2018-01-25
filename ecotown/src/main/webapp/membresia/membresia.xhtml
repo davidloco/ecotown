@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form prependId="false">
+		<p:panel header="#{msg.membresia}">
+			<p:messages showDetail="true" showSummary="false" autoUpdate="true"
+				closable="true" />
+
+			<h:panelGrid id="membresia" columns="2"
+				columnClasses="columnizquierda">
+
+				<p:outputLabel value="#{msg.name}:" />
+				<p:inputText required="true" maxlength="100"
+					value="#{membresia.membresia.strnombre}" label="#{msg.name}">
+					<f:validateLength minimum="2" />
+				</p:inputText>
+
+				<p:outputLabel value="#{msg.precio}:" />
+				<p:spinner value="#{membresia.membresia.numprco}" required="true"
+					prefix="$" min="0" label="#{msg.precio}">
+				</p:spinner>
+
+				<p:outputLabel value="#{msg.popular}:" />
+				<p:selectBooleanButton value="#{membresia.membresia.boolpplr}"
+					onLabel="#{msg.activo}" offLabel="#{msg.inactivo}"
+					onIcon="fa fa-toggle-on" offIcon="fa fa-toggle-off" />
+
+				<f:facet name="footer">
+					<p:commandButton value="#{msg.guardar}"
+						icon="fa fas fa-plus fa-inverse fa-lg"
+						update="membresia, tableMembresia" styleClass="outButtonTotalFont"
+						action="#{membresia.guardar()}" />
+				</f:facet>
+
+			</h:panelGrid>
+
+			<p:spacer height="10" />
+
+			<p:dataTable id="tableMembresia" var="me"
+				value="#{membresia.listMembresias}" emptyMessage="#{msg.label1}"
+				resizableColumns="true" rows="5" paginator="true"
+				paginatorPosition="bottom" style="width:70%">
+
+				<p:column headerText="#{msg.name}" sortBy="#{me.strnombre}"
+					filterMatchMode="contains" filterBy="#{me.strnombre}">
+					<h:outputText value="#{me.strnombre}" />
+				</p:column>
+
+				<p:column headerText="#{msg.precio}" sortBy="#{me.numprco}"
+					filterMatchMode="contains" filterBy="#{me.numprco}">
+					<h:outputText value="#{me.numprco}">
+						<f:convertNumber type="currency" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+
+				<p:column headerText="#{msg.popular}" sortBy="#{me.boolpplr}">
+					<p:selectBooleanButton value="#{me.boolpplr}" disabled="true"
+						onLabel="#{msg.activo}" offLabel="#{msg.inactivo}"
+						onIcon="fa fa-toggle-on" offIcon="fa fa-toggle-off" />
+				</p:column>
+
+				<p:column headerText="#{msg.ver}" styleClass="columnButton">
+					<p:commandButton icon="fa fa-search fa-inverse fa-lg"
+						update="tableMembresia" immediate="true" title="#{msg.ver}"
+						alt="#{msg.ver}" styleClass="btnVer" />
+				</p:column>
+
+				<p:column headerText="#{msg.editar}" styleClass="columnButton">
+					<p:commandButton icon="fa fa-pencil fa-inverse fa-lg"
+						update="tableMembresia" styleClass="btnEditar" immediate="true"
+						title="#{msg.editar}" alt="#{msg.editar}" />
+				</p:column>
+
+				<p:column headerText="#{msg.eliminar}" styleClass="columnButton">
+					<p:commandButton icon="fa fa-trash fa-inverse fa-lg"
+						update="tableMembresia" immediate="true" title="#{msg.eliminar}"
+						alt="#{msg.eliminar}" action="#{membresia.eliminar(me)}"
+						styleClass="btnBorrar" />
+				</p:column>
+
+				<p:contextMenu for="tableMembresia">
+					<p:menuitem value="#{msg.eliminar}" update="tableMembresia"
+						icon="ui-icon-trash" actionListener="#{membresia.eliminar(me)}" />
+					<p:menuitem value="#{msg.modificar}" update="tableMembresia"
+						icon="ui-icon-pencil" />
+				</p:contextMenu>
+			</p:dataTable>
+
+		</p:panel>
+	</h:form>
+
+</ui:composition>

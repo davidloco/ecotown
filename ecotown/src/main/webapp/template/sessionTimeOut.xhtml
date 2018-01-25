@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form prependId="false">
+		<p:idleMonitor onactive="PF('sessionTimeOutDialog').show();"
+			timeout="#{60 * 60000}" />
+		<p:dialog header="#{msg.IODErr8}" widgetVar="sessionTimeOutDialog"
+			modal="true" fixedCenter="true" closable="false" width="400"
+			visible="false" resizable="false" draggable="false">
+			<h:panelGrid columns="1">
+				<h:outputText value="#{msg.IODErr7}" />
+				<input id="confirmBackToLogin" type="button" value="#{msg.IODErr6}"
+					onclick="window.location='#{facesContext.externalContext.requestContextPath}/index.xhtml';" />
+			</h:panelGrid>
+		</p:dialog>
+	</h:form>
+
+</ui:composition>

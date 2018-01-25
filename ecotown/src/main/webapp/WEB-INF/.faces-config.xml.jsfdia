@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="56,136,53,58" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="inadmin::#admin#adminHome.xhtml"
+    NAME="output" PATH="/admin/adminHome.xhtml"
+    TARGET="rules:#admin#adminHome.xhtml" TITLE="inadmin" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="inparametrica::#parametrica#parametricaHome.xhtml"
+    NAME="output1" PATH="/parametrica/parametricaHome.xhtml"
+    TARGET="rules:#parametrica#parametricaHome.xhtml"
+    TITLE="inparametrica" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="inmembresia::#membresia#membresiaHome.xhtml"
+    NAME="output2" PATH="/membresia/membresiaHome.xhtml"
+    TARGET="rules:#membresia#membresiaHome.xhtml" TITLE="inmembresia" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="intipomaterial::#tipoMaterial#tipoMaterialHome.xhtml"
+    NAME="output3" PATH="/tipoMaterial/tipoMaterialHome.xhtml"
+    TARGET="rules:#tipoMaterial#tipoMaterialHome.xhtml"
+    TITLE="intipomaterial" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="intitulo::#titulo#tituloHome.xhtml"
+    NAME="output4" PATH="/titulo/tituloHome.xhtml"
+    TARGET="rules:#titulo#tituloHome.xhtml" TITLE="intitulo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ininteresresiduo::#interesResiduo#interesResiduoHome.xhtml"
+    NAME="output5" PATH="/interesResiduo/interesResiduoHome.xhtml"
+    TARGET="rules:#interesResiduo#interesResiduoHome.xhtml"
+    TITLE="ininteresresiduo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="inperfil::#perfil#perfilHome.xhtml"
+    NAME="output6" PATH="/perfil/perfilHome.xhtml"
+    TARGET="rules:#perfil#perfilHome.xhtml" TITLE="inperfil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="inpublicacionresiduo::#publicacion_residuo#publicacion_residuoHome.xhtml"
+    NAME="output7"
+    PATH="/publicacion_residuo/publicacion_residuoHome.xhtml"
+    TARGET="rules:#publicacion_residuo#publicacion_residuoHome.xhtml"
+    TITLE="inpublicacionresiduo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="inpublicacionresiduover::#publicacion_residuo#publicacion_residuoVer.xhtml"
+    NAME="output8"
+    PATH="/publicacion_residuo/publicacion_residuoVer.xhtml"
+    TARGET="rules:#publicacion_residuo#publicacion_residuoVer.xhtml"
+    TITLE="inpublicacionresiduover" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="inmembresiaselect::#template#membresiaSelect.xhtml"
+    NAME="output9" PATH="/template/membresiaSelect.xhtml"
+    TARGET="rules:#template#membresiaSelect.xhtml"
+    TITLE="inmembresiaselect" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="insectorproductivo::#sectorProductivo#sectorProductivoHome.xhtml"
+    NAME="output10" PATH="/sectorProductivo/sectorProductivoHome.xhtml"
+    TARGET="rules:#sectorProductivo#sectorProductivoHome.xhtml"
+    TITLE="insectorproductivo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="intercero::#tercero#terceroHome.xhtml"
+    NAME="output11" PATH="/tercero/terceroHome.xhtml"
+    TARGET="rules:#tercero#terceroHome.xhtml" TITLE="intercero" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="interceroperfil::#tercero#terceroPerfil.xhtml" NAME="output12"
+    PATH="/tercero/terceroPerfil.xhtml"
+    TARGET="rules:#tercero#terceroPerfil.xhtml" TITLE="interceroperfil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="inproyectoHome::#proyecto#proyectoHome.xhtml" NAME="output13"
+    PATH="/proyecto/proyectoHome.xhtml"
+    TARGET="rules:#proyecto#proyectoHome.xhtml" TITLE="inproyectoHome" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="inmoduloHome::#modulo#moduloHome.xhtml"
+    NAME="output14" PATH="/modulo/moduloHome.xhtml"
+    TARGET="rules:#modulo#moduloHome.xhtml" TITLE="inmoduloHome" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="inhomeprincipal::#home#homePrincipal.xhtml"
+    NAME="output15" PATH="/home/homePrincipal.xhtml"
+    TARGET="rules:#home#homePrincipal.xhtml" TITLE="inhomeprincipal" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="inindicadores::#indicadores#indicadorHome.xhtml" NAME="output16"
+    PATH="/indicadores/indicadorHome.xhtml"
+    TARGET="rules:#indicadores#indicadorHome.xhtml"
+    TITLE="inindicadores" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="salir::#index.xhtml" NAME="output17"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="salir" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#titulo#tituloHome.xhtml"
+  PATH="/titulo/tituloHome.xhtml" SHAPE="304,513,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#perfil#perfilHome.xhtml"
+  PATH="/perfil/perfilHome.xhtml" SHAPE="304,545,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#indicadores#indicadorHome.xhtml"
+  PATH="/indicadores/indicadorHome.xhtml" SHAPE="304,641,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#proyecto#proyectoHome.xhtml"
+  PATH="/proyecto/proyectoHome.xhtml" SHAPE="304,529,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#tipoMaterial#tipoMaterialHome.xhtml"
+  PATH="/tipoMaterial/tipoMaterialHome.xhtml" SHAPE="304,513,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#sectorProductivo#sectorProductivoHome.xhtml"
+  PATH="/sectorProductivo/sectorProductivoHome.xhtml"
+  SHAPE="304,577,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#modulo#moduloHome.xhtml"
+  PATH="/modulo/moduloHome.xhtml" SHAPE="304,593,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#home#homePrincipal.xhtml"
+  PATH="/home/homePrincipal.xhtml" SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#membresia#membresiaHome.xhtml"
+  PATH="/membresia/membresiaHome.xhtml" SHAPE="304,481,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="304,609,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#adminHome.xhtml"
+  PATH="/admin/adminHome.xhtml" SHAPE="304,673,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#tercero#terceroPerfil.xhtml"
+  PATH="/tercero/terceroPerfil.xhtml" SHAPE="304,641,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#template#membresiaSelect.xhtml"
+  PATH="/template/membresiaSelect.xhtml" SHAPE="304,641,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#tercero#terceroHome.xhtml"
+  PATH="/tercero/terceroHome.xhtml" SHAPE="304,609,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#parametrica#parametricaHome.xhtml"
+  PATH="/parametrica/parametricaHome.xhtml" SHAPE="304,145,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#seguridad#seguridadHome.xhtml"
+  PATH="/seguridad/seguridadHome.xhtml" SHAPE="304,705,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#publicacion_residuo#publicacion_residuoHome.xhtml"
+  PATH="/publicacion_residuo/publicacion_residuoHome.xhtml"
+  SHAPE="304,769,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#anuncio#anuncioHome.xhtml"
+  PATH="/anuncio/anuncioHome.xhtml" SHAPE="304,769,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#publicacion_residuo#publicacion_residuoVer.xhtml"
+  PATH="/publicacion_residuo/publicacion_residuoVer.xhtml"
+  SHAPE="304,769,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#interesResiduo#interesResiduoHome.xhtml"
+  PATH="/interesResiduo/interesResiduoHome.xhtml" SHAPE="304,801,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

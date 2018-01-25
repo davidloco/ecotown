@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form>
+		<p:menubar>
+			<p:submenu>
+				<p:menuitem value="#{msg.modificar} #{msg.perfil}" icon="fa fa-user"
+					action="#{sessionTercero.entrarSessionTercero()}" immediate="true" />
+				<p:menuitem value="#{msg.tusanuncios}" icon="fa fa-flag"
+					action="#{anuncio.entrarAnuncio()}" immediate="true" />
+				<p:menuitem value="#{msg.seguridad}" icon="fa fa-lock"
+					action="#{seguridad.entrarSeguridad()}" immediate="true" />
+				<p:separator />
+				<p:menuitem value="#{msg.publicacionresiduo}" icon="fa fa-recycle"
+					action="#{publicacionResiduo.entrarPublicacionResiduo()}"
+					immediate="true" />
+				<p:menuitem value="#{msg.interesresiduo}" icon="fa fa-heart"
+					action="#{interesResiduo.entrarInteresResiduo()}" immediate="true" />
+				<p:separator />
+				<p:menuitem value="#{msg.salir}" icon="fa fa-external-link"
+					action="#{login.logout()}" immediate="true" />
+			</p:submenu>
+
+			<p:menuitem icon="fa fa-question" iconPos="fa fa-question-circle"
+				title="#{msg.ayuda}" value="#{msg.ayuda}" />
+			<p:menuitem icon="fa fa-comments" iconPos="fa fa-comments-o"
+				title="#{msg.buzon}" value="#{msg.buzon}" />
+			<p:menuitem value="#{msg.inicio}" icon="fa fa-home"
+				action="#{beanModulo.inicializarRecursos()}" process="@all" />
+			<p:menuitem value="#{login.tercero.strnmbre}" icon="fa fa-user"
+				action="#{sessionTercero.entrarSessionTercero()}" immediate="true" />
+
+			<f:facet name="options">
+				<h:panelGrid columns="3">
+					<h:outputLabel value="#{msg.perfil}:" styleClass="textNegrita" />
+					<h:outputLabel value="#{login.perfil.strnmbre}" />
+					<h:graphicImage value="/resources/images/logo.png" width="40" />
+				</h:panelGrid>
+			</f:facet>
+		</p:menubar>
+	</h:form>
+
+</ui:composition>
